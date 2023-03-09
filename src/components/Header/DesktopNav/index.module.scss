@@ -21,13 +21,13 @@
 }
 
 .logo {
-  width: 50px;
+  width: 30px;
 
 
-  svg {
-    height: min-content !important;
+  // svg {
+  //   height: min-content !important;
 
-  }
+  // }
 
 }
 
@@ -55,7 +55,7 @@
 .navCta {
  width: calc( var(--gutter-h) /2 - var(--base));
   width: max-content;
-  position: absolute;
+  // position: absolute;
   right: calc(3*var(--base));
   // right: 1rem;
   display: flex;
@@ -74,12 +74,12 @@
     }
   }
 
-  @include large-break {
-    position: static;
-    right: 0;
-    transform: unset;
-    width: auto;
-  }
+  // @include large-break {
+  //   position: static;
+  //   right: 0;
+  //   transform: unset;
+  //   width: auto;
+  // }
 }
 .ctaItem {
   margin-right: calc(var(--base) * .75);
