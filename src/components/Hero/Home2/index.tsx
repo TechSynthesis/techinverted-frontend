@@ -3,8 +3,8 @@
 import { CMSLink } from '@components/CMSLink'
 import Image from 'next/image'
 import React from 'react'
-import Marquee from 'react-fast-marquee'
-import { ThemeProvider, useTheme } from '@providers/Theme'
+// import Marquee from 'react-fast-marquee'
+import { ThemeProvider } from '@providers/Theme'
 import { Gutter } from '@components/Gutter'
 // import { Media } from '@components/Media'
 import { RichText } from '@components/RichText'
@@ -13,14 +13,8 @@ import { HeaderObserver } from '../../HeaderObserver'
 
 import classes from './index.module.scss'
 
-export const HomeHero: React.FC<Page['hero']> = ({
-  richText,
-  adjectives,
-  actions,
-  media,
-  buttons,
-}) => {
-  const theme = useTheme()
+export const HomeHero: React.FC<Page['hero']> = ({ richText, actions }) => {
+  // const theme = useTheme()
 
   return (
     <div className={classes.homeHero}>
@@ -30,10 +24,10 @@ export const HomeHero: React.FC<Page['hero']> = ({
             <div className={classes.bgImage}>
               <Image
                 priority
-                src="/images/hero-bg.svg"
+                src="/images/background-gun.jpg"
                 fill
-                alt="Circles"
-                sizes="191vh" // aspect ratio of png, translates to 100vh
+                alt="Screenshots of CMW"
+                sizes="210vh" // aspect ratio of png, translates to 100vh 191
               />
             </div>
           </div>
@@ -44,6 +38,14 @@ export const HomeHero: React.FC<Page['hero']> = ({
                 <div className={classes.sidebar}>
                   {Array.isArray(actions) && (
                     <ul className={classes.actions}>
+                      <p className={classes.shortIntro}>
+                        India’s top manufacturing companies trust CMW for their service cleaning
+                        needs.
+                      </p>
+                      <p className={classes.shortIntro}>
+                        Meet your all-in-one solution – for
+                        <br /> all your cleaning needs – today.
+                      </p>
                       {actions.map(({ link }, i) => {
                         return (
                           <li key={i}>
@@ -53,54 +55,35 @@ export const HomeHero: React.FC<Page['hero']> = ({
                       })}
                     </ul>
                   )}
-                  {Array.isArray(buttons) && (
-                    <ul className={classes.buttons}>
-                      {buttons.map(({ link }, i) => {
-                        return (
-                          <li key={i}>
-                            <CMSLink {...link} />
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  )}
                 </div>
               </div>
               <hr />
             </Gutter>
-            {Array.isArray(adjectives) && (
-              <Marquee
-                gradient={false}
-                pauseOnHover={true}
-                pauseOnClick={true}
-                speed={200}
-                className={classes.adjectives}
-              >
+            {/* {Array.isArray(adjectives) && (
+              <div className={classes.adjectives}>
                 {adjectives.map(({ adjective }, i) => (
                   <span key={i} className={classes.adjective}>
                     {adjective}
                   </span>
                 ))}
-              </Marquee>
-            )}
-            {typeof media === 'object' && (
-              <Gutter>
-                <div className={classes.padForMedia} />
-              </Gutter>
-            )}
+              </div>
+            )} */}
+            {/* <Gutter>
+              <div className={classes.bottomPadding} />
+            </Gutter> */}
           </div>
         </HeaderObserver>
       </ThemeProvider>
-      {/* {typeof media === 'object' && (
-        <Gutter className={classes.mediaGutter}>
-          <Media resource={media} className={classes.media} />
-          <div className={classes.voidSpaceBelowMedia}>
-            <HeaderObserver color={theme} />
-          </div>
-        </Gutter>
-      )} */}
-
-      <HeaderObserver color={theme} />
+      <section className={classes.CenteredBrandText}>
+        <div className={classes.textBlock}>
+          <h2 className={classes.gradientText}>CMW is an all-in-one</h2>
+          <h2 className={classes.gradientText}>Solution</h2>
+        </div>
+        <div className={classes.textBlock}>
+          <h2 className={classes.gradientText}>Loved by the leading</h2>
+          <h2 className={classes.gradientText}>Manufacturing Companies in the world.</h2>
+        </div>
+      </section>
     </div>
   )
 }

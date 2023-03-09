@@ -9,8 +9,8 @@ export type MetaType = {
 }
 
 const defaults = {
-  title: 'CMW CO2 Technologies',
-  description: 'The future of Dry Ice Cleaning Technology',
+  title: `${process.env.WEBSITE_TITLE}`,
+  description: `${process.env.WEBSITE_DECRIPTION}`,
   image: '',
 }
 
@@ -34,8 +34,8 @@ const Meta: React.FC<MetaType> = ({
       <meta name="description" content={description} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-      <meta property="og:url" content={`https://cmw-dryice.com/${slug}`} />
-      <meta property="og:site_name" content="Tech Inverted" />
+      <meta property="og:url" content={`https://techinverted.com/${slug}`} />
+      <meta property="og:site_name" content="TechInverted" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="og:type" content="website" />
     </Fragment>

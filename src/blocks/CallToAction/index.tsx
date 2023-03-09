@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { BlockSpacing } from '@components/BlockSpacing'
 import { Cell, Grid } from '@faceless-ui/css-grid'
 import { CMSLink } from '@components/CMSLink'
-import CreatePayloadApp from '@components/CreatePayloadApp'
-import { Label } from '@components/Label'
+// import CreatePayloadApp from '@components/CreatePayloadApp'
+// import { Label } from '@components/Label'
 import { PixelBackground } from '@components/PixelBackground'
 import { ArrowIcon } from '@icons/ArrowIcon'
 import { RichText } from '@components/RichText'
@@ -16,7 +16,7 @@ export type CallToActionProps = Extract<Page['layout'][0], { blockType: 'cta' }>
 
 export const CallToAction: React.FC<CallToActionProps> = props => {
   const {
-    ctaFields: { richText, feature, links },
+    ctaFields: { richText, links },
   } = props
 
   const hasLinks = links && links.length > 0
@@ -39,12 +39,12 @@ export const CallToAction: React.FC<CallToActionProps> = props => {
               <RichText content={richText} />
             </Cell>
             <Cell cols={5} start={8} colsM={8} startM={1}>
-              {feature === 'cpa' && (
+              {/* {feature === 'cpa' && (
                 <Fragment>
                   <Label>Get started in one line</Label>
                   <CreatePayloadApp background={false} className={classes.cpa} />
                 </Fragment>
-              )}
+              )} */}
               {hasLinks && (
                 <div className={classes.links}>
                   <PixelBackground className={classes.pixelBG} />

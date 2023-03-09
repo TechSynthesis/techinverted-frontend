@@ -8,7 +8,7 @@ const nextConfig = withBundleAnalyzer({
   reactStrictMode: true,
   images: {
     minimumCacheTTL: 6000,
-    domains: ['localhost', 'cms.cmw-dryice.com'],
+    domains: ['localhost', 'cms.techinverted.com'],
   },
   experimental: {
     appDir: true,
