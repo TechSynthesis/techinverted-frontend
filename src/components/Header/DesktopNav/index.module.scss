@@ -22,28 +22,13 @@
 
 .logo {
   width: 50px;
-  // display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  // position: absolute;
-  // left: 0;
-  // display: flex;
-  // justify-content: flex-end;
-  // transform: translateX(-100%);
-  // top: -2px;
+/
 
   svg {
     height: min-content !important;
 
   }
 
-  @include large-break {
-    // position: static;
-    // left: 0;
-    // transform: unset;
-    // width: auto;
-    // margin-right: var(--base);
-  }
 }
 
 .navItems {
@@ -74,9 +59,8 @@
   right: calc(3*var(--base));
   // right: 1rem;
   display: flex;
-  
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
   
   // transform: translateX(100%);
   top: 0;
